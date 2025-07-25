@@ -1,0 +1,15 @@
+body,
+html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: hidden;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background-color: #1e1e1e;
+  color: #cccccc;
+}
+#file-tree-container {
+  height: 100%;
+  width: 100%;
+  overflow: auto;
+}
