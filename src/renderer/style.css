@@ -1,15 +1,85 @@
-body,
-html {
+/* src/renderer/style.css */
+@import "@vscode/codicons/dist/codicon.css";
+
+html,
+body {
   margin: 0;
   padding: 0;
   height: 100%;
   overflow: hidden;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  background-color: #1e1e1e;
+  background-color: #1a1a1a; /* A slightly different main background */
   color: #cccccc;
 }
-#file-tree-container {
+
+.app-layout {
+  display: flex;
+  height: 100vh;
+}
+
+.sidebar {
+  width: 280px; /* Give the sidebar a fixed width */
+  min-width: 180px; /* Add min/max widths */
+  max-width: 500px;
+  background-color: #1e1e1e;
   height: 100%;
+  position: relative; /* For positioning the welcome screen */
+  resize: horizontal; /* Allow user to resize the sidebar */
+  overflow: auto; /* Allow resizing handle to be visible */
+}
+
+.main-content {
+  flex-grow: 1; /* Take up the remaining space */
+  padding: 20px;
+}
+
+.file-tree-container {
+  height: 100%; /* Fill the sidebar height */
   width: 100%;
-  overflow: auto;
+  overflow-y: auto;
+  position: relative;
+  outline: none;
+}
+
+.tree-node-sizer {
+  /* This invisible element creates the scrollbar */
+  position: relative;
+  width: 100%;
+  height: 0; /* Will be set by JS */
+}
+
+.tree-node {
+  display: flex;
+  align-items: center;
+  padding: 0 10px; /* Padding is now horizontal only */
+  white-space: nowrap;
+  cursor: pointer;
+  user-select: none;
+  position: absolute; /* Each node is absolutely positioned */
+  width: 100%;
+  box-sizing: border-box; /* Ensures padding doesn't affect width */
+}
+
+.tree-node:hover {
+  background-color: #2a2d2e;
+}
+
+.tree-node-icon {
+  margin-right: 6px;
+  width: 16px;
+  height: 16px;
+}
+
+.tree-node-label {
+  font-size: 14px;
+}
+
+/* Added style for the active/selected node */
+.tree-node.is-active {
+  background-color: #37373d;
+}
+
+/* When the container is focused, show a specific style for the active node */
+.file-tree-container:focus .tree-node.is-active {
+  background-color: #094771;
 }

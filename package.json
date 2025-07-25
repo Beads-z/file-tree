@@ -12,10 +12,17 @@
   "license": "ISC",
   "packageManager": "pnpm@10.13.1",
   "devDependencies": {
+    "@types/chokidar": "^2.1.7",
+    "@types/path-browserify": "^1.0.3",
+    "@vscode/codicons": "^0.0.38",
     "electron": "^31.0.0",
     "typescript": "^5.8.3",
     "vite": "^7.0.6",
     "vite-plugin-electron": "^0.29.0",
     "vite-plugin-electron-renderer": "^0.14.6"
+  },
+  "dependencies": {
+    "chokidar": "^4.0.3",
+    "path-browserify": "^1.0.1"
   }
 }

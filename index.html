@@ -3,13 +3,29 @@
 
 <head>
     <meta charset="UTF-8" />
+    <meta http-equiv="Content-Security-Policy"
+        content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>File Tree</title>
     <link rel="stylesheet" href="/src/renderer/style.css">
 </head>
 
 <body>
-    <div id="file-tree-container"></div>
+    <div class="app-layout">
+
+        <div class="sidebar">
+            <div id="file-tree-container" tabindex="0"></div>
+            <div id="welcome-screen">
+                <h1>File Tree Explorer</h1>
+                <button id="open-folder-btn">Open Folder</button>
+            </div>
+        </div>
+
+        <div class="main-content">
+            <p>Main Content Area</p>
+        </div>
+
+    </div>
 
     <script type="module" src="/src/renderer/workbench.ts"></script>
 </body>
